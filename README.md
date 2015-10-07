@@ -1,5 +1,4 @@
-# Phylostratigraphy
-Tutorial on how to perform phylostratigraphy
+# Tutorial on how to perform phylostratigraphy
 
 ## Performing Phylostratigraphy with the createPsMap.pl script
 
@@ -46,7 +45,13 @@ The initial phylostratigraphy algorithm is based on phylogenetic information ret
 from [NCBI Taxonomy](http://www.ncbi.nlm.nih.gov/taxonomy). In case users whish to perform the phylostratigraphy algorithm
 with custom phylogenetic information they need to adjust the header information in the query fasta file and data base fasta file in the following way:
 
+0) Download the [createPsMap.pl script](https://github.com/HajkD/Active-maintenance-of-phylotranscriptomic-hourglasses/blob/master/createPsMap.pl) to run the phylostratigraphy algorithm.
+    
+1) Make sure that BLAST (ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.21/) is installed on your machine.
 
+2)
+
+3)
 
 
 
