@@ -8,7 +8,7 @@ __Phylostratigraphy__ was introduced by <a href="http://www.sciencedirect.com/sc
 In this section we show how to perform the phylostratigraphy algorithm using the Perl script `createPsMap.pl`. The output of `createPsMap.pl` is a table storing the phylostratum information in the first column and the corresponding gene id of the query organism in the second column. We refer to this output table as `phylostratigraphic map`.
 
 
-For creating the phylostratigraphic map the following steps have to be done:
+For creating the phylostratigraphic map the following steps have to be performed:
 
 0) Download the [createPsMap.pl script](https://github.com/HajkD/Active-maintenance-of-phylotranscriptomic-hourglasses/blob/master/createPsMap.pl) to run the phylostratigraphy algorithm.
     
@@ -27,9 +27,10 @@ or
 >ATCG00500.1|PACid:19637947 | [Arabidopsis thaliana] | [Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis]
 ```
 
-Hence, the header of the fasta sequences contain the phylogenetic information of the query organism, whereas in the `phyloBlastDB_Drost_Gabel_Grosse_Quint.fa.tbz` database contains phylogenetic information of the subject organisms as header information. 
+Hence, the header of the fasta sequences contain the phylogenetic information of the query organism and the `phyloBlastDB_Drost_Gabel_Grosse_Quint.fa` database contains phylogenetic information of the subject organisms as header information. 
 
 4) Use the following command to start the createPsMap.pl Perl script
+
 ```terminal
 perl createPsMap.pl -i Athaliana_167_protein_with_new_Header.fa -d phyloBlastDB_Drost_Gabel_Grosse_Quint.fa -p BLAST_Athaliana 
                     -r athaliana_blast_results -t 30 -a 64             
@@ -51,12 +52,12 @@ with custom phylogenetic information they need to adjust the header information 
 
 0) Download the [createPsMap.pl script](https://github.com/HajkD/Active-maintenance-of-phylotranscriptomic-hourglasses/blob/master/createPsMap.pl) to run the phylostratigraphy algorithm.
     
-1) Make sure that BLAST (ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.21/) is installed on your machine.
+1) Install BLAST (ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.21/)
 
-2) Adjust the phylogenetic information in the header of your query organism's FASTA-file (e.g. Athaliana_167_protein.fa), e.g. adjust the order retrieved by NCBI Taxonomy `ATCG00500.1|PACid:19637947 | [Arabidopsis thaliana] | [Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis]` to your custom phylogeny.
+2) Adjust the phylogenetic information in the header of your query organism's FASTA-file (e.g. Athaliana_167_protein.fa), e.g. adjust the order retrieved from NCBI Taxonomy `ATCG00500.1|PACid:19637947 | [Arabidopsis thaliana] | [Eukaryota; Viridiplantae; Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta; Magnoliophyta; eudicotyledons; core eudicotyledons; rosids; malvids; Brassicales; Brassicaceae; Camelineae; Arabidopsis]` to your custom phylogeny.
 Do this for each sequence (gene) within your FASTA file.
 
-3) Analogously to step 2 adjust the header information of the `phyloBlastDB_Drost_Gabel_Grosse_Quint.fa` file.
+3) Analogously to step 2 adjust the header information of the `phyloBlastDB_Drost_Gabel_Grosse_Quint.fa` file using custom phylogenetic information.
 
 4) Use the following command to start the createPsMap.pl Perl script
 
